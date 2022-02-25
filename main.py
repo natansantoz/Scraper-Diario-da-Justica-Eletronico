@@ -101,7 +101,6 @@ def data_validate(date_text):
     try:
         datetime.datetime.strptime(date_text, '%d-%m-%Y')
     except ValueError:
-
         return "Data inválida, formato válido: DD-MM-YYYY"
 
 
@@ -114,8 +113,8 @@ def return_soup_object(response):
     
 
 def salva_hashs_em_arquivo(nomes_cifrados):
+    
     for nome in nomes_cifrados:
-        
         path = os.path.join('nomes_cifrados', 'nomes_cifrados.txt')
         
         if not os.path.exists('nomes_cifrados'):
