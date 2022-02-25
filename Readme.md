@@ -1,4 +1,4 @@
-## Scraper Que Faz O Download dos [Diáriosda Justiça Eletrônico](http://www.stf.jus.br/portal/diariojusticaeletronico/pesquisardiarioeletronico.asp) do Dia Especificado
+## Scraper Que Faz O Download dos [Diários da Justiça Eletrônicos](http://www.stf.jus.br/portal/diariojusticaeletronico/pesquisardiarioeletronico.asp) do Dia Especificado
 
 
 A solução é um conjunto de funções que recebe uma data e fazem o download dos diários daquele dia.
