@@ -11,4 +11,4 @@ A solução é um conjunto de funções que recebe uma data e fazem o download d
   - É retornada uma lista com os hashs MD5 dos nomes dos PDF's.
 
 
-# ![Gif-Execucao](https://github.com/natansantoz/Scraper-Diario-da-Justica-Eletronico/blob/master/imagens/gif-updated.gif)
+# ![Gif-Execucao](https://github.com/natansantoz/Scraper-Diario-da-Justica-Eletronico/blob/master/imagens/Animation.gif)
