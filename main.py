@@ -21,10 +21,10 @@ def baixa_pdf(lista_urls_finais, nomes_cifrados, headers):
     for url in lista_urls_finais:
         response = requests.get(url, headers=headers)
 
-        path = os.path.join('pdfs_output', f'{nomes_cifrados[count]}.pdf')
+        path = os.path.join('diarios', f'{nomes_cifrados[count]}.pdf')
         
-        if not os.path.exists('pdfs_output'):
-            os.makedirs('pdfs_output')
+        if not os.path.exists('diarios'):
+            os.makedirs('diarios')
 
         if response.status_code == 200:
             with open(path, 'wb') as file:
@@ -112,19 +112,6 @@ def return_soup_object(response):
     return soup
     
 
-def salva_hashs_em_arquivo(nomes_cifrados):
-    
-    for nome in nomes_cifrados:
-        path = os.path.join('nomes_cifrados', 'nomes_cifrados.txt')
-        
-        if not os.path.exists('nomes_cifrados'):
-            os.makedirs('nomes_cifrados')
-
-        with open(path, 'a') as file:
-            file.write(nome)
-            file.write('\n')
-
-
 def main(data):
 
     date = trata_date(data)
@@ -136,7 +123,7 @@ def main(data):
         response = do_first_request(date, headers)
 
         if response.status_code == 200:
-
+            
             lista_parametros_urls = get_parametros_para_url(response)
             lista_urls_finais = cria_urls_finais(lista_parametros_urls)
 
@@ -145,8 +132,8 @@ def main(data):
             
             baixa_pdf(lista_urls_finais, nomes_cifrados, headers)
 
-            salva_hashs_em_arquivo(nomes_cifrados)
             print(nomes_cifrados)
+
             return nomes_cifrados
         else:
             print("Não foi possivel fazer a requisição")
